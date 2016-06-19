@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Preview Page</title>    
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <script type="text/javascript">
+    
+    var MP3_URL = "https://mail-attachment.googleusercontent.com/attachment/u/0/?ui=2&ik=dd5c2a9dfd&view=att&th=15550ec6b726274e&attid=0.1&disp=safe&realattid=f_ipfzn1yv0&zw&saddbat=ANGjdJ8ogThR3jhzJ0d0jAHfclDZF1cCWuPbIX378qxwJXSSaxgv2iyM6PJ7ZnX5NYJlKOCJsKbDFt_lxbgTUWUjytc50aPYQ3jpW4UkGsIKzaE5mvBaGiLdwFqBY-gMT6AaucFSLMnXveZYw2_CnRczR_P5zlMi_D1WHr3h0tiRe1GPyPDARMf-W_6oA5mCfdEBDNgnQGpl16KZAh2mdZsg61UcA6Y_AAUGloAMccnTZsjdMHjv9aaEpDW76ErT-MNmiabvlzCyzQ-QwxBnguVMHrWECvFCxoGlg5sS8GmbkgErc8AkGwJERG4_aftSU13_xu2A5FW7iWD-ePzqTL_5owZGZg6g2Xy_iyw3gbzJ0CDYSsY40RNeb_HoqOjvQeb92NaCfIHCG_ZQiTMKFuEafaYSN3b7JLish6UizKCGS4KHgaT3ev3MKrAKzE9e6MGvDLBmye8qcnKKyZtfbGUOnRMVE9i_5J7rl2f3BcVVai0Q85UjAAXpDjhhlfaQ2Gm6qz4bnDi4wyWtiHvTkRyNVStJQ0XbUTupl97wJgbYMwf6FLn3OEqdw0l2JKNBRr2F8y_eS2r0D7h2yfSKgiWTdk2YUw-0j4FtKo77iOI7z53Lu4ax69Xde8DvnhxdXNk9VgTxIajVyFXQDrbl";
+    
+    var target = null;
+
+  </script>
+  <body>
+
+
+    <html>
+<head>
+<script type="text/javascript" src="js/jquery.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src='https://connect.soundcloud.com/sdk/sdk-3.0.0.js'></script>
+</head>
+<body>
+  <div id='blocker' class='hidden'></div>
+  <div id='main'>
+  	<audio controls src='C:\Users\Rafael\testAudio.mp3'></audio>
+    <button class='search-button no-float index' onclick='changeSong(event.target)'>Trocar música</button>
+
+  	<audio controls src='C:\Users\Rafael\testAudio.mp3'></audio>
+    <button class='search-button no-float index' onclick='changeSong(event.target)'>Trocar música</button>
+  </div>
+
+  <div id='user-audio'>
+  	  <a href="#" class="close" onclick='closeSongDialog()'></a>
+	  <form id="search-tracks" class='center'>
+	    <input placeholder='Escolha outra música...' type="text" name="search" id="search">
+	  </form>
+		<div id='out-loader-container'>
+			<div id='out-loader'></div>
+		</div>
+	  <div id="track-list" class='center'>
+	  </div>
+    <div id='in-loader'></div>
+    <div id='blocker-inside' class='hidden'>
+      <div id='in-loader-container'>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="js/index.js"></script>
+<script type="text/javascript">
+  
+function buildElement(source) {
+  /*var audio = document.createElement('audio');
+  audio.controls = true;
+  audio.id = 'audio-file';*/
+  target.src = source;
+  //document.getElementById('user-audio').appendChild(audio);
+}
+
+function hideLoader(){
+  $("#out-loader").hide();
+}
+
+function showLoader(){
+	$('#ul-tracks').remove();
+	$("#out-loader").show();
+}
+
+function changeSong(e){
+  target = e.previousElementSibling;
+  $('#blocker').fadeIn();
+  $('#user-audio').slideDown(450);
+  $('#search').val('');
+  $('#ul-tracks').remove();
+}
+
+function closeSongDialog(){
+  $('#blocker').fadeOut();
+  $('#user-audio').fadeOut();
+  $('#search').val('');
+  $('#ul-tracks').remove();
+}
+
+</script>
+</html>

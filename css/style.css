@@ -1,0 +1,288 @@
+body * {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+#main{
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 10px;
+  margin-left: 0;
+  padding: 0;
+  height: 400px;
+}
+
+li:first-child{
+  padding-top: 0px;
+}
+
+li {
+  padding: 5px;
+  padding-top: 30px;
+  font-size: 14px;
+}
+
+audio {
+  width: 315px;
+  display: block;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+}
+
+input {
+  font-size: 16px;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid #898989;
+  padding: 4px;
+}
+
+input[type=submit] {
+  background-color: honeydew;
+  cursor: pointer;
+}
+
+input[type=text] {
+  background-color: #fff;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+#user-audio{
+  display: none;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  z-index: 999;
+}
+
+li audio{
+  width: 300px;
+}
+
+#search{
+  width: 317px;
+  font-size: 14px;
+}
+
+#search-tracks{
+  width: 327px;
+  top: 40px;
+}
+
+#track-list{
+  width: 327px;
+  overflow-y: scroll;
+  top: 20%;
+}
+
+.center{
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+button {
+  border-radius: 15px;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 35px;
+  padding: 0;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #1294f3;
+  border: 0;
+  border-bottom: 2px solid #0c6eb7;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #292724;
+  box-shadow: inset 0 -2px #0c6eb7;
+}
+
+
+button:active{
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.hidden{
+  left: 0;
+  top: 0;
+  opacity: 0.4;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.no-float{
+  float: none!important;
+}
+.index{
+  margin-bottom:20px!important;
+  width: 300px!important;
+  border: 1px solid #b3b3b3!important;
+}
+.search-button{
+  background-color: #d9dfd9!important;
+  border-radius: 15px;
+  position: relative;
+  vertical-align: top;
+  width: 30%;
+  height: 35px;
+  padding: 0;
+  font-size: 14px;
+  color: #080808;
+  text-align: center;
+  text-shadow:none;
+  background: #e5e5e4;
+  border: 0;
+  border-bottom:none;
+  cursor: pointer;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  float: right;
+}
+
+
+.close:after {
+    content: '✖';
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+.close {
+  color: white;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: -10px;
+  text-decoration: none;
+  top: -10px;
+  background-color: #2a2020;
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  border-radius: 32px;
+}
+
+#out-loader, #in-loader {
+  display: none;
+  position: absolute;
+  left: 43%;
+  top: 45%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid  #666;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+#in-loader{
+  z-index: 3921923;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#blocker-inside{
+  display: none;
+  background-color: #353333;
+}
+
+#blocker{
+  display: none;
+}
+
+@media only screen and (max-width: 640px){
+  #user-audio{
+    width: 295px;
+    height: 320px;
+  }
+  .index{
+   // width: 100%!important;
+  }
+  #search-tracks{
+    width:295px;
+  }
+  #search{
+    width: 260px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #track-list{
+    width: 244px;
+  }
+  li audio{
+    width: 234px;
+  }
+  #track-list{
+    top: 28%;
+  }
+  button{
+    width: 230px;
+  }
+  li{
+    text-align: center;
+  }
+  ul{
+    height: 171px;
+  }
+  #in-loader, #out-loader{
+    left: 37%;
+  }
+  audio{
+    display: inline;
+    width: 300px;
+    left: 0;
+    transform: none;
+  }
+}
